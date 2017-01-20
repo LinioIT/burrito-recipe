@@ -1,0 +1,39 @@
+{
+    "name": "linio/burrito-recipe",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "description": "A complete recipe for Tortilla applications.",
+    "require": {
+        "php": ">=7.0",
+        "linio/tortilla": "~1.2",
+        "vlucas/phpdotenv": "~2.4",
+        "monolog/monolog": "~1.22"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.6",
+        "friendsofphp/php-cs-fixer": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "@cs-validate",
+            "@phpunit"
+        ],
+        "cs-fix": [
+            "bin/php-cs-fixer fix"
+        ],
+        "cs-validate": [
+            "bin/php-cs-fixer fix --dry-run -v"
+        ],
+        "phpunit": [
+            "bin/phpunit"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}

@@ -14,7 +14,7 @@ if (file_exists(ROOT . '/.env')) {
 
 // Application setup
 $app = new Application();
-$app['debug'] = getenv('DEBUG') ?? $debug ?? false;
+$app['debug'] = (bool) ($debug ?? getenv('DEBUG') ?? false);
 
 // Configuration
 $config = require_once APP_DIR . '/config.php';
